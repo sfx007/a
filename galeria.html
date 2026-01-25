@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería | Montajes El Khayati</title>
+    <meta name="description"
+        content="Galería de trabajos de Montajes El Khayati - Sistemas constructivos, aislamientos y protección contra el fuego.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Gallery Page Specific Styles */
+        .gallery-page-hero {
+            background: linear-gradient(135deg, var(--blue-dark) 0%, var(--accent) 100%);
+            padding: 180px 0 80px;
+            text-align: center;
+        }
+
+        .gallery-page-hero .section-label {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .gallery-page-hero .section-title {
+            color: #ffffff;
+        }
+
+        .gallery-page-hero .section-desc {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .gallery-page .gallery {
+            padding-top: 60px;
+        }
+
+        .gallery-page .gallery-header {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="gallery-page">
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <a href="tel:+34696312578"><i class="fas fa-phone"></i> +34 696 312 578</a>
+                    <a href="mailto:info@elkhayati.com"><i class="fas fa-envelope"></i> info@elkhayati.com</a>
+                </div>
+                <div class="top-bar-right">
+                    <span><i class="fas fa-map-marker-alt"></i> Madrid, España</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header scrolled" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Montajes El Khayati" class="logo-icon">
+                <div class="logo-text">
+                    <span class="logo-title">MONTAJES</span>
+                    <span class="logo-subtitle">EL KHAYATI</span>
+                </div>
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">INICIO</a></li>
+                    <li><a href="index.html#soluciones" class="nav-link">SOLUCIONES</a></li>
+                    <li><a href="index.html#sectores" class="nav-link">SECTORES</a></li>
+                    <li><a href="index.html#nosotros" class="nav-link">NOSOTROS</a></li>
+                    <li><a href="index.html#proyectos" class="nav-link">PROYECTOS</a></li>
+                    <li><a href="galeria.html" class="nav-link active">GALERÍA</a></li>
+                    <li><a href="index.html#contacto" class="nav-link nav-link-btn">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="lang-selector" id="lang-selector">
+                    <button class="lang-toggle" id="lang-toggle">
+                        <img src="images/flags/es.svg" alt="ES" class="lang-flag-icon">
+                        <span class="lang-code">ES</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="lang-dropdown">
+                        <a href="#" class="lang-option active" data-lang="es">
+                            <img src="images/flags/es.svg" alt="ES" class="lang-flag-icon">
+                            <span>Español</span>
+                        </a>
+                        <a href="#" class="lang-option" data-lang="en">
+                            <img src="images/flags/en.svg" alt="EN" class="lang-flag-icon">
+                            <span>English</span>
+                        </a>
+                        <a href="#" class="lang-option" data-lang="de">
+                            <img src="images/flags/de.svg" alt="DE" class="lang-flag-icon">
+                            <span>Deutsch</span>
+                        </a>
+                    </div>
+                </div>
+                <button class="dark-mode-toggle" id="dark-mode-toggle" title="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Gallery Hero -->
+    <section class="gallery-page-hero">
+        <div class="container">
+            <span class="section-label" data-translate="gallery.hero.label">PORTFOLIO</span>
+            <h1 class="section-title" data-translate="gallery.hero.title">Galería de Trabajos</h1>
+            <p class="section-desc" data-translate="gallery.hero.desc">Descubre nuestra amplia variedad de proyectos
+                ejecutados con los más altos
+                estándares de calidad</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="galeria">
+        <div class="container">
+            <div class="gallery-header">
+                <span class="section-label" data-translate="gallery.hero.label">GALERÍA</span>
+                <h2 class="section-title" data-translate="gallery.hero.title">Nuestros Trabajos</h2>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all" data-translate="gallery.filter.all">TODO</button>
+                <button class="filter-btn" data-filter="aislamiento"
+                    data-translate="gallery.filter.aislamiento">AISLAMIENTO ACÚSTICO</button>
+                <button class="filter-btn" data-filter="techos" data-translate="gallery.filter.techos">FALSOS
+                    TECHOS</button>
+                <button class="filter-btn" data-filter="internacional"
+                    data-translate="gallery.filter.internacional">INTERNACIONAL</button>
+                <button class="filter-btn" data-filter="fuego" data-translate="gallery.filter.fuego">PROTECCIÓN
+                    PASIVA</button>
+                <button class="filter-btn" data-filter="pyl" data-translate="gallery.filter.pyl">SISTEMAS PYL</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                <!-- Aislamiento Acústico -->
+                <div class="gallery-item" data-category="aislamiento">
+                    <img loading="lazy" src="images/portfolio/Aislamiento-Acustico/aislamiento-01.jpg"
+                        alt="Aislamiento 01">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category" data-translate="gallery.filter.aislamiento">AISLAMIENTO
+                            ACÚSTICO</span>
+                        <h3 class="gallery-title">Aislamiento 01</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="aislamiento">
+                    <img loading="lazy" src="images/portfolio/Aislamiento-Acustico/aislamiento-02.jpg"
+                        alt="Aislamiento 02">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category" data-translate="gallery.filter.aislamiento">AISLAMIENTO
+                            ACÚSTICO</span>
+                        <h3 class="gallery-title">Aislamiento 02</h3>
+                    </div>
+                </div>
+                <div class="gallery-item large" data-category="aislamiento">
+                    <img loading="lazy" src="images/portfolio/Aislamiento-Acustico/aislamiento-04.jpg"
+                        alt="Aislamiento 04">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category" data-translate="gallery.filter.aislamiento">AISLAMIENTO
+                            ACÚSTICO</span>
+                        <h3 class="gallery-title">Aislamiento 04</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="aislamiento">
+                    <img loading="lazy" src="images/portfolio/Aislamiento-Acustico/aislamiento-05.jpg"
+                        alt="Aislamiento 05">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category" data-translate="gallery.filter.aislamiento">AISLAMIENTO
+                            ACÚSTICO</span>
+                        <h3 class="gallery-title">Aislamiento 05</h3>
+                    </div>
+                </div>
+
+                <!-- Falsos Techos -->
+                <div class="gallery-item" data-category="techos">
+                    <img loading="lazy" src="images/portfolio/Falsos-Techos-Continuos/Falso-Techo-01.jpg"
+                        alt="Falso Techo 01">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category" data-translate="gallery.filter.techos">FALSOS TECHOS</span>
+                        <h3 class="gallery-title">Falso Techo 01</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="techos">
+                    <img loading="lazy" src="images/portfolio/Falsos-Techos-Continuos/Falso-Techo-02.jpg"
+                        alt="Falso Techo 02">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category" data-translate="gallery.filter.techos">FALSOS TECHOS</span>
+                        <h3 class="gallery-title">Falso Techo 02</h3>
+                    </div>
+                </div>
+                <div class="gallery-item large" data-category="techos">
+                    <img loading="lazy" src="images/portfolio/Falsos-Techos-Continuos/Falso-Techo-03.jpg"
+                        alt="Falso Techo 03">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category" data-translate="gallery.filter.techos">FALSOS TECHOS</span>
+                        <h3 class="gallery-title">Falso Techo 03</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="techos">
+                    <img loading="lazy" src="images/portfolio/Falsos-Techos-Continuos/Falso-Techo-05.jpg"
+                        alt="Falso Techo 05">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category" data-translate="gallery.filter.techos">FALSOS TECHOS</span>
+                        <h3 class="gallery-title">Falso Techo 05</h3>
+                    </div>
+                </div>
+
+                <!-- Internacional -->
+                <div class="gallery-item" data-category="internacional">
+                    <img loading="lazy" src="images/portfolio/Internacional/Banco-Central-Europeo-1.jpg"
+                        alt="Banco Central Europeo">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category"
+                            data-translate="gallery.filter.internacional">INTERNACIONAL</span>
+                        <h3 class="gallery-title">Banco Central Europeo</h3>
+                    </div>
+                </div>
+                <div class="gallery-item large" data-category="internacional">
+                    <img loading="lazy" src="images/portfolio/Internacional/BASF-1.jpg" alt="BASF 1">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category"
+                            data-translate="gallery.filter.internacional">INTERNACIONAL</span>
+                        <h3 class="gallery-title">BASF</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="internacional">
+                    <img loading="lazy" src="images/portfolio/Internacional/Hotel-Marriott-01.jpg" alt="Hotel Marriott">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category"
+                            data-translate="gallery.filter.internacional">INTERNACIONAL</span>
+                        <h3 class="gallery-title">Hotel Marriott</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="internacional">
+                    <img loading="lazy" src="images/portfolio/Internacional/Hotel-Element-1.jpg" alt="Hotel Element">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category"
+                            data-translate="gallery.filter.internacional">INTERNACIONAL</span>
+                        <h3 class="gallery-title">Hotel Element</h3>
+                    </div>
+                </div>
+
+                <!-- Protección Pasiva -->
+                <div class="gallery-item" data-category="fuego">
+                    <img loading="lazy" src="images/portfolio/Proteccion-Pasiva/Proteccion-Pasiva-Contra-El-Fuego-1.jpg"
+                        alt="Protección Pasiva 1">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category" data-translate="gallery.filter.fuego">PROTECCIÓN PASIVA</span>
+                        <h3 class="gallery-title">Protección 01</h3>
+                    </div>
+                </div>
+                <div class="gallery-item large" data-category="fuego">
+                    <img loading="lazy" src="images/portfolio/Proteccion-Pasiva/Proteccion-Pasiva-Contra-El-Fuego-3.jpg"
+                        alt="Protección Pasiva 3">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">PROTECCIÓN PASIVA</span>
+                        <h3 class="gallery-title">Protección 03</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fuego">
+                    <img loading="lazy" src="images/portfolio/Proteccion-Pasiva/Proteccion-Pasiva-Contra-El-Fuego-5.jpg"
+                        alt="Protección Pasiva 5">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">PROTECCIÓN PASIVA</span>
+                        <h3 class="gallery-title">Protección 05</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fuego">
+                    <img loading="lazy" src="images/portfolio/Proteccion-Pasiva/Proteccion-Pasiva-Contra-El-Fuego-7.jpg"
+                        alt="Protección Pasiva 7">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">PROTECCIÓN PASIVA</span>
+                        <h3 class="gallery-title">Protección 07</h3>
+                    </div>
+                </div>
+
+                <!-- Sistemas PYL -->
+                <div class="gallery-item" data-category="pyl">
+                    <img loading="lazy"
+                        src="images/portfolio/Sistemas-PYL/Sistemas-Constructivos-Placa-Yeso-Laminado-1.jpg"
+                        alt="PYL 1">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">SISTEMAS PYL</span>
+                        <h3 class="gallery-title">PYL 01</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="pyl">
+                    <img loading="lazy"
+                        src="images/portfolio/Sistemas-PYL/Sistemas-Constructivos-Placa-Yeso-Laminado-2.jpg"
+                        alt="PYL 2">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">SISTEMAS PYL</span>
+                        <h3 class="gallery-title">PYL 02</h3>
+                    </div>
+                </div>
+                <div class="gallery-item large" data-category="pyl">
+                    <img loading="lazy"
+                        src="images/portfolio/Sistemas-PYL/Sistemas-Constructivos-Placa-Yeso-Laminado-3.jpg"
+                        alt="PYL 3">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">SISTEMAS PYL</span>
+                        <h3 class="gallery-title">PYL 03</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="pyl">
+                    <img loading="lazy"
+                        src="images/portfolio/Sistemas-PYL/Sistemas-Constructivos-Placa-Yeso-Laminado-5.jpg"
+                        alt="PYL 5">
+                    <div class="gallery-overlay">
+                        <span class="gallery-category">SISTEMAS PYL</span>
+                        <h3 class="gallery-title">PYL 05</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-nav lightbox-next" id="lightbox-next">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightbox-img">
+            <div class="lightbox-info">
+                <span class="lightbox-category" id="lightbox-category"></span>
+                <h3 class="lightbox-title" id="lightbox-title"></h3>
+                <span class="lightbox-counter" id="lightbox-counter"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="images/logo.png" alt="Montajes El Khayati" class="logo-icon">
+                        <span>EL KHAYATI</span>
+                    </a>
+                    <p class="footer-desc" data-translate="footer.desc">Empresa especializada en sistemas constructivos
+                        de placa y yeso laminado,
+                        tabiquería seca y aislamientos.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-translate="footer.solutions">Soluciones</h4>
+                    <ul>
+                        <li><a href="index.html#soluciones" data-translate="solutions.tabiqueria.title">Tabiquería
+                                Seca</a></li>
+                        <li><a href="index.html#soluciones" data-translate="solutions.termico.title">Aislamiento
+                                Térmico</a></li>
+                        <li><a href="index.html#soluciones" data-translate="solutions.acustico.title">Aislamiento
+                                Acústico</a></li>
+                        <li><a href="index.html#soluciones" data-translate="solutions.techos.title">Falsos Techos</a>
+                        </li>
+                        <li><a href="index.html#soluciones" data-translate="solutions.fuego.title">Protección Contra
+                                Fuego</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 data-translate="footer.sectors">Sectores</h4>
+                    <ul>
+                        <li><a href="index.html#sectores" data-translate="industries.hotels.title">Hoteles</a></li>
+                        <li><a href="index.html#sectores" data-translate="industries.hospitals.title">Hospitales</a>
+                        </li>
+                        <li><a href="index.html#sectores"
+                                data-translate="industries.institutional.title">Institucional</a></li>
+                        <li><a href="index.html#sectores" data-translate="industries.industrial.title">Industrial</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 data-translate="footer.contact">Contacto</h4>
+                    <p data-translate="contact.address.value">Calle Orión, 11<br>Griñón, Madrid</p>
+                    <p>+34 696 312 578</p>
+                    <p>info@elkhayati.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate="footer.copyright">&copy; 2026 - Montajes El Khayati S.L. Todos los derechos
+                    reservados.</p>
+                <div class="footer-legal">
+                    <a href="#" data-translate="footer.privacy">Política de Privacidad</a>
+                    <a href="#" data-translate="footer.terms">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

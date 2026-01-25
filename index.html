@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montajes El Khayati | Sistemas Constructivos y Aislamientos</title>
+    <meta name="description"
+        content="Empresa especializada en sistemas constructivos de placa y yeso laminado, tabiquería seca, aislamientos, falsos techos y protección pasiva contra el fuego.">
+    <!-- Critical CSS for loader - prevents flash -->
+    <style>
+        .loader {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .loader-content {
+            text-align: center
+        }
+
+        .loader-logo {
+            margin-bottom: -115px
+        }
+
+        .loader-icon {
+            width: 380px !important;
+            height: 380px !important;
+            max-width: none !important;
+            object-fit: contain
+        }
+
+        .loader-text {
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            letter-spacing: .3em;
+            color: #1a3a5c;
+            margin-bottom: 15px
+        }
+
+        .loader-subtitle {
+            display: block;
+            font-family: Georgia, serif;
+            font-size: 1.8rem;
+            letter-spacing: .2em;
+            color: #4abcc9;
+            margin-bottom: -5px;
+            line-height: 1;
+            font-weight: 500
+        }
+
+        .loader-bar {
+            width: 320px;
+            height: 2px;
+            background: rgba(21, 101, 192, .2);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 0 auto
+        }
+
+        .loader-progress {
+            width: 0;
+            height: 100%;
+            background: #1565c0;
+            animation: loading 2s ease forwards
+        }
+
+        @keyframes loading {
+            to {
+                width: 100%
+            }
+        }
+    </style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="images/logo.png" alt="Montajes El Khayati" class="loader-icon">
+            </div>
+            <div class="loader-text"><span class="loader-subtitle">MONTAJES</span>EL KHAYATI</div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-left">
+                    <a href="tel:+34696312578"><i class="fas fa-phone"></i> +34 696 312 578</a>
+                    <a href="mailto:info@elkhayati.com"><i class="fas fa-envelope"></i> info@elkhayati.com</a>
+                </div>
+                <div class="top-bar-right">
+                    <span><i class="fas fa-map-marker-alt"></i> Madrid, España</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Montajes El Khayati" class="logo-icon">
+                <div class="logo-text">
+                    <span class="logo-title">MONTAJES</span>
+                    <span class="logo-subtitle">EL KHAYATI</span>
+                </div>
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#inicio" class="nav-link active" data-translate="nav.inicio">INICIO</a></li>
+                    <li><a href="#soluciones" class="nav-link" data-translate="nav.soluciones">SOLUCIONES</a></li>
+                    <li><a href="#sectores" class="nav-link" data-translate="nav.sectores">SECTORES</a></li>
+                    <li><a href="#nosotros" class="nav-link" data-translate="nav.nosotros">NOSOTROS</a></li>
+                    <li><a href="#proyectos" class="nav-link" data-translate="nav.proyectos">PROYECTOS</a></li>
+                    <li><a href="galeria.html" class="nav-link" data-translate="nav.galeria">GALERÍA</a></li>
+                    <li><a href="#contacto" class="nav-link nav-link-btn" data-translate="nav.contacto">CONTACTO</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="lang-selector" id="lang-selector">
+                    <button class="lang-toggle" id="lang-toggle">
+                        <img src="images/flags/es.svg" alt="ES" class="lang-flag-icon">
+                        <span class="lang-code">ES</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="lang-dropdown">
+                        <a href="#" class="lang-option active" data-lang="es">
+                            <img src="images/flags/es.svg" alt="ES" class="lang-flag-icon">
+                            <span>Español</span>
+                        </a>
+                        <a href="#" class="lang-option" data-lang="en">
+                            <img src="images/flags/en.svg" alt="EN" class="lang-flag-icon">
+                            <span>English</span>
+                        </a>
+                        <a href="#" class="lang-option" data-lang="de">
+                            <img src="images/flags/de.svg" alt="DE" class="lang-flag-icon">
+                            <span>Deutsch</span>
+                        </a>
+                    </div>
+                </div>
+                <button class="dark-mode-toggle" id="dark-mode-toggle" title="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Slideshow -->
+    <section class="hero-slideshow" id="inicio">
+        <div class="slides-container">
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <div class="slide-bg">
+                    <img src="assets/images/Hotel-Element-1.jpg" alt="Construcción">
+                    <div class="slide-overlay"></div>
+                </div>
+                <div class="slide-content">
+                    <span class="slide-label" data-translate="hero.slide1.label">ESPECIALISTAS EN CONSTRUCCIÓN</span>
+                    <h1 class="slide-title" data-translate="hero.slide1.title">Tabiquería Seca &<br>Sistemas
+                        Constructivos</h1>
+                    <p class="slide-subtitle" data-translate="hero.slide1.subtitle">Soluciones integrales en sistemas de
+                        placa de yeso laminado, aislamientos y protección pasiva contra el fuego.</p>
+                    <a href="#soluciones" class="btn btn-light">
+                        <span data-translate="hero.slide1.btn">Descubrir Soluciones</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide">
+                <div class="slide-bg">
+                    <img src="assets/images/Marriott-Frankfurt-Hotel-1.jpg" alt="Hotel Marriott">
+                    <div class="slide-overlay"></div>
+                </div>
+                <div class="slide-content">
+                    <span class="slide-label" data-translate="hero.slide2.label">CONFORT Y EFICIENCIA</span>
+                    <h1 class="slide-title" data-translate="hero.slide2.title">Confort Térmico<br>y Acústico</h1>
+                    <p class="slide-subtitle" data-translate="hero.slide2.subtitle">Mejoramos el confort de los espacios
+                        con soluciones de aislamiento térmico y acústico de alta eficiencia.</p>
+                    <a href="#proyectos" class="btn btn-light">
+                        <span data-translate="hero.slide2.btn">Ver Proyectos</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide">
+                <div class="slide-bg">
+                    <img src="assets/images/banco-central-europeo.jpg" alt="Banco Central Europeo">
+                    <div class="slide-overlay"></div>
+                </div>
+                <div class="slide-content">
+                    <span class="slide-label" data-translate="hero.slide3.label">EXPERIENCIA INTERNACIONAL</span>
+                    <h1 class="slide-title" data-translate="hero.slide3.title">Experiencia Global<br>en Europa</h1>
+                    <p class="slide-subtitle" data-translate="hero.slide3.subtitle">Proyectos ejecutados en España,
+                        Alemania, Portugal y otros países europeos con los más altos estándares.</p>
+                    <a href="#nosotros" class="btn btn-light">
+                        <span data-translate="hero.slide3.btn">Conocer Más</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Slide Navigation -->
+        <div class="slide-nav">
+            <button class="slide-dot active" data-slide="0"></button>
+            <button class="slide-dot" data-slide="1"></button>
+            <button class="slide-dot" data-slide="2"></button>
+        </div>
+        <!-- Slide Arrows -->
+        <button class="slide-arrow slide-arrow-prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="slide-arrow slide-arrow-next"><i class="fas fa-chevron-right"></i></button>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions" id="soluciones">
+        <div class="container">
+            <div class="solutions-grid">
+                <div class="solution-card" data-aos="fade-up">
+                    <div class="solution-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3 class="solution-title" data-translate="solutions.tabiqueria.title">Tabiquería Seca</h3>
+                    <p class="solution-desc" data-translate="solutions.tabiqueria.desc">Sistemas de placa y yeso
+                        laminado para tabiques, revestimientos y fachadas
+                        con máxima calidad.</p>
+                    <a href="#galeria" class="solution-link">
+                        <span data-translate="solutions.link">Ver más</span> <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="solution-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="solution-icon">
+                        <i class="fas fa-temperature-low"></i>
+                    </div>
+                    <h3 class="solution-title" data-translate="solutions.termico.title">Aislamiento Térmico</h3>
+                    <p class="solution-desc" data-translate="solutions.termico.desc">Soluciones de aislamiento para
+                        minimizar la transmisión de calor y mejorar
+                        la eficiencia.</p>
+                    <a href="#galeria" class="solution-link">
+                        <span data-translate="solutions.link">Ver más</span> <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="solution-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="solution-icon">
+                        <i class="fas fa-volume-mute"></i>
+                    </div>
+                    <h3 class="solution-title" data-translate="solutions.acustico.title">Aislamiento Acústico</h3>
+                    <p class="solution-desc" data-translate="solutions.acustico.desc">Mejoramos la acústica interior
+                        evitando ruidos y vibraciones externas.</p>
+                    <a href="#galeria" class="solution-link">
+                        <span data-translate="solutions.link">Ver más</span> <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="solution-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="solution-icon">
+                        <i class="fas fa-border-top-left"></i>
+                    </div>
+                    <h3 class="solution-title" data-translate="solutions.techos.title">Falsos Techos</h3>
+                    <p class="solution-desc" data-translate="solutions.techos.desc">Techos registrables, acústicos y
+                        continuos adaptados a cada espacio.</p>
+                    <a href="#galeria" class="solution-link">
+                        <span data-translate="solutions.link">Ver más</span> <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="solution-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="solution-icon">
+                        <i class="fas fa-fire-extinguisher"></i>
+                    </div>
+                    <h3 class="solution-title" data-translate="solutions.fuego.title">Protección Contra Fuego</h3>
+                    <p class="solution-desc" data-translate="solutions.fuego.desc">Sistemas de protección pasiva para
+                        prevenir y retardar la propagación del
+                        fuego.</p>
+                    <a href="#galeria" class="solution-link">
+                        <span data-translate="solutions.link">Ver más</span> <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="solution-card solution-card-cta" data-aos="fade-up" data-aos-delay="500">
+                    <div class="solution-cta-content">
+                        <h3 data-translate="solutions.cta.title">¿Necesita asesoramiento?</h3>
+                        <p data-translate="solutions.cta.desc">Contáctenos para una consulta personalizada</p>
+                        <a href="#contacto" class="btn btn-primary">
+                            <span data-translate="solutions.cta.btn">Contactar</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="value-proposition">
+        <div class="container">
+            <div class="value-grid">
+                <div class="value-content">
+                    <span class="section-label" data-translate="value.label">NUESTRO COMPROMISO</span>
+                    <h2 class="section-title" data-translate="value.title">Nuestro valor se mide<br>por el éxito de sus
+                        proyectos</h2>
+                    <p class="value-text" data-translate="value.text1">
+                        En Montajes El Khayati, somos especialistas en sistemas constructivos de alta calidad.
+                        Con más de 10 años de experiencia, nos hemos consolidado como referentes en tabiquería seca,
+                        aislamientos y protección pasiva contra el fuego, trabajando con materiales certificados
+                        y un equipo altamente cualificado.
+                    </p>
+                    <p class="value-text" data-translate="value.text2">
+                        Nuestro compromiso va más allá de la ejecución: aportamos asesoramiento técnico directo,
+                        soluciones reales y efectivas, responsabilizándonos de todas las fases del proyecto tanto
+                        a nivel nacional como internacional.
+                    </p>
+                    <a href="#nosotros" class="btn-link">
+                        <span data-translate="value.link">Conocer más sobre nosotros</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="value-stats">
+                    <div class="value-stat-item">
+                        <span class="value-stat-number" data-count="10" data-translate="value.stat1.number">10</span>
+                        <span class="value-stat-plus">+</span>
+                        <span class="value-stat-label" data-translate="value.stat1.label">Años de Experiencia</span>
+                    </div>
+                    <div class="value-stat-item">
+                        <span class="value-stat-number" data-count="2" data-translate="value.stat2.number">2</span>
+                        <span class="value-stat-label" data-translate="value.stat2.label">Países</span>
+                    </div>
+                    <div class="value-stat-item">
+                        <span class="value-stat-number" data-count="98" data-translate="value.stat3.number">98</span>
+                        <span class="value-stat-plus">%</span>
+                        <span class="value-stat-label" data-translate="value.stat3.label">Clientes Satisfechos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Expertise Section -->
+    <section class="industries" id="sectores">
+        <div class="container">
+            <div class="industries-header">
+                <span class="section-label" data-translate="industries.label">EXPERIENCIA EN SECTORES</span>
+                <h2 class="section-title" data-translate="industries.title">Sectores que servimos</h2>
+                <p class="section-desc" data-translate="industries.desc">Hemos ejecutado proyectos de alta complejidad
+                    en diversos sectores</p>
+            </div>
+            <div class="industries-grid">
+                <a href="#proyectos" class="industry-card">
+                    <img src="assets/images/Marriott-Frankfurt-Hotel-1.jpg" alt="Hoteles">
+                    <div class="industry-overlay">
+                        <h3 class="industry-title" data-translate="industries.hotels.title">Hoteles</h3>
+                        <p class="industry-desc" data-translate="industries.hotels.desc">Marriott, Element y más
+                            proyectos hoteleros de primer nivel</p>
+                    </div>
+                </a>
+                <a href="#proyectos" class="industry-card">
+                    <img src="assets/images/Hospital_Vigo.jpg" alt="Hospitales">
+                    <div class="industry-overlay">
+                        <h3 class="industry-title" data-translate="industries.hospitals.title">Hospitales</h3>
+                        <p class="industry-desc" data-translate="industries.hospitals.desc">Centros sanitarios con los
+                            más altos estándares</p>
+                    </div>
+                </a>
+                <a href="#proyectos" class="industry-card">
+                    <img src="assets/images/banco-central-europeo.jpg" alt="Institucional">
+                    <div class="industry-overlay">
+                        <h3 class="industry-title" data-translate="industries.institutional.title">Institucional</h3>
+                        <p class="industry-desc" data-translate="industries.institutional.desc">Banco Central Europeo y
+                            edificios institucionales</p>
+                    </div>
+                </a>
+                <a href="#proyectos" class="industry-card">
+                    <img src="assets/images/BASF.jpg" alt="Industrial">
+                    <div class="industry-overlay">
+                        <h3 class="industry-title" data-translate="industries.industrial.title">Industrial</h3>
+                        <p class="industry-desc" data-translate="industries.industrial.desc">BASF y complejos
+                            industriales de gran escala</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Who We Are -->
+    <section class="about-modern" id="nosotros">
+        <div class="container">
+            <div class="about-modern-grid">
+                <div class="about-modern-content">
+                    <span class="section-label" data-translate="about.label">QUIÉNES SOMOS</span>
+                    <h2 class="section-title" data-translate="about.title">Profesionales cualificados<br>a su servicio
+                    </h2>
+                    <p class="about-modern-text" data-translate="about.text1">
+                        Montajes El Khayati S.L. es una empresa consolidada que cuenta con certificados de calidad
+                        documental. Todos nuestros trabajadores cuentan con la formación necesaria, tanto en
+                        riesgos laborales como en cursos específicos de los fabricantes.
+                    </p>
+                    <p class="about-modern-text" data-translate="about.text2">
+                        Trabajamos exclusivamente con materiales de primera calidad, de fabricantes de reconocido
+                        prestigio, todos con certificaciones CEE y AENOR.
+                    </p>
+                    <div class="about-certifications">
+                        <div class="certification-badge">
+                            <i class="fas fa-certificate"></i>
+                            <span data-translate="about.cert.iso">Certificado Obralia</span>
+                        </div>
+                        <div class="certification-badge">
+                            <i class="fas fa-check-circle"></i>
+                            <span data-translate="about.cert.fire">CEE & AENOR</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-modern-images">
+                    <div class="about-img-wrapper about-img-1">
+                        <img src="assets/images/worker1.jpg" alt="Profesional trabajando">
+                    </div>
+                    <div class="about-img-wrapper about-img-2">
+                        <img src="assets/images/worker2.jpg" alt="Equipo de trabajo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners">
+        <div class="container">
+            <div class="partners-header">
+                <span class="section-label" data-translate="partners.label">COLABORAMOS CON</span>
+                <h2 class="section-title-sm" data-translate="partners.title">Nuestros Clientes y Partners</h2>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <span>LINDER AG</span>
+                </div>
+                <div class="partner-logo">
+                    <span>MARRIOTT</span>
+                </div>
+                <div class="partner-logo">
+                    <span>BASF</span>
+                </div>
+                <div class="partner-logo">
+                    <span>VIAS</span>
+                </div>
+                <div class="partner-logo">
+                    <span>OBRALIA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="projects" id="proyectos">
+        <div class="container">
+            <div class="projects-header">
+                <span class="section-label" data-translate="projects.label">PORTFOLIO</span>
+                <h2 class="section-title" data-translate="projects.title">Proyectos Destacados</h2>
+                <p class="section-desc" data-translate="projects.desc">Obras ejecutadas en España y Alemania con los más
+                    altos estándares</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card project-card-lg">
+                    <img src="assets/images/unnamed.jpg" alt="Hotel Marriott">
+                    <div class="project-overlay">
+                        <span class="project-category" data-translate="projects.cat.hotel">HOTEL</span>
+                        <h3 class="project-title">Hotel Marriott Frankfurt</h3>
+                        <p class="project-client"><span data-translate="projects.client">Cliente</span>: Linder AG |
+                            2016</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/banco.jpg" alt="Banco Central Europeo">
+                    <div class="project-overlay">
+                        <span class="project-category" data-translate="projects.cat.institutional">INSTITUCIONAL</span>
+                        <h3 class="project-title">Banco Central Europeo</h3>
+                        <p class="project-client"><span data-translate="projects.client">Cliente</span>: Linder AG |
+                            2013</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Hospital_Vigo.jpg" alt="Hospital de Vigo">
+                    <div class="project-overlay">
+                        <span class="project-category" data-translate="projects.cat.healthcare">SANITARIO</span>
+                        <h3 class="project-title">Hospital de Vigo</h3>
+                        <p class="project-client"><span data-translate="projects.client">Cliente</span>: Divisec Norte |
+                            2015</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/BASF.jpg" alt="BASF">
+                    <div class="project-overlay">
+                        <span class="project-category" data-translate="projects.cat.industrial">INDUSTRIAL</span>
+                        <h3 class="project-title">BASF</h3>
+                        <p class="project-client"><span data-translate="projects.client">Cliente</span>: Linder AG |
+                            2014-2015</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="assets/images/Centro-Médico-Ruber_3.jpg" alt="Clínica Ruber">
+                    <div class="project-overlay">
+                        <span class="project-category" data-translate="projects.cat.healthcare">SANITARIO</span>
+                        <h3 class="project-title">Clínica Ruber</h3>
+                        <p class="project-client"><span data-translate="projects.client">Cliente</span>: Vias | 2016</p>
+                    </div>
+                </div>
+            </div>
+            <div class="projects-cta">
+                <a href="galeria.html" class="btn-link-dark">
+                    <span data-translate="projects.link">Ver todos los proyectos</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title" data-translate="cta.title">¿En qué podemos ayudarle?</h2>
+                <p class="cta-text" data-translate="cta.text">Estamos listos para colaborar en su próximo proyecto</p>
+                <a href="#contacto" class="btn btn-light-outline">
+                    <span data-translate="cta.btn">Solicitar Presupuesto</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-label" data-translate="contact.label">CONTACTO</span>
+                    <h2 class="section-title" data-translate="contact.title">Contacta<br>con nosotros</h2>
+                    <p class="contact-text" data-translate="contact.text">Respondemos en 24 horas. Cuéntanos sobre tu
+                        proyecto y te ofreceremos
+                        soluciones personalizadas.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong data-translate="contact.address.label">Dirección</strong>
+                                <p data-translate="contact.address.value">Calle Orión, 11<br>Polígono Empresarial Las
+                                    Cubiertas<br>Griñón, Madrid, España</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong data-translate="contact.phone.label">Teléfono</strong>
+                                <p>+34 696 312 578<br>FAX: +34 910 105 376</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong data-translate="contact.email.label">Email</strong>
+                                <p>info@elkhayati.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Nombre" data-translate="contact.form.name"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email" data-translate="contact.form.email"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="phone" placeholder="Teléfono" data-translate="contact.form.phone">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Mensaje" rows="5"
+                                data-translate="contact.form.message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span data-translate="contact.form.btn">ENVIAR MENSAJE</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <img src="images/logo.png" alt="Montajes El Khayati" class="logo-icon">
+                        <span>EL KHAYATI</span>
+                    </a>
+                    <p class="footer-desc" data-translate="footer.desc">Empresa especializada en sistemas constructivos
+                        de placa y yeso laminado,
+                        tabiquería seca y aislamientos.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-translate="footer.solutions">Soluciones</h4>
+                    <ul>
+                        <li><a href="#soluciones" data-translate="solutions.tabiqueria.title">Tabiquería Seca</a></li>
+                        <li><a href="#soluciones" data-translate="solutions.termico.title">Aislamiento Térmico</a></li>
+                        <li><a href="#soluciones" data-translate="solutions.acustico.title">Aislamiento Acústico</a>
+                        </li>
+                        <li><a href="#soluciones" data-translate="solutions.techos.title">Falsos Techos</a></li>
+                        <li><a href="#soluciones" data-translate="solutions.fuego.title">Protección Contra Fuego</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 data-translate="footer.sectors">Sectores</h4>
+                    <ul>
+                        <li><a href="#sectores" data-translate="industries.hotels.title">Hoteles</a></li>
+                        <li><a href="#sectores" data-translate="industries.hospitals.title">Hospitales</a></li>
+                        <li><a href="#sectores" data-translate="industries.institutional.title">Institucional</a></li>
+                        <li><a href="#sectores" data-translate="industries.industrial.title">Industrial</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 data-translate="footer.contact">Contacto</h4>
+                    <p data-translate="contact.address.value">Calle Orión, 11<br>Griñón, Madrid</p>
+                    <p>+34 696 312 578</p>
+                    <p>info@elkhayati.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate="footer.copyright">&copy; 2026 - Montajes El Khayati S.L. Todos los derechos
+                    reservados.</p>
+                <div class="footer-legal">
+                    <a href="#" data-translate="footer.privacy">Política de Privacidad</a>
+                    <a href="#" data-translate="footer.terms">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
