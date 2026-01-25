@@ -268,6 +268,7 @@ body {
     object-fit: contain;
     transition: var(--transition);
     margin-right: -25px;
+    filter: brightness(0) invert(1);
 }
 
 .logo-text {
@@ -282,29 +283,34 @@ body {
     font-family: var(--font-display);
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--brand-cyan);
+    color: #ffffff;
     letter-spacing: 0.05em;
+    transition: var(--transition);
 }
 
 .logo-subtitle {
     font-family: var(--font-body);
     font-size: 1rem;
     font-weight: 600;
-    color: var(--brand-navy);
+    color: #ffffff;
     letter-spacing: 0.2em;
     text-transform: uppercase;
+    transition: var(--transition);
 }
 
 .header.scrolled .logo-icon {
     height: 90px;
+    filter: none;
 }
 
 .header.scrolled .logo-title {
     font-size: 1.4rem;
+    color: var(--brand-cyan);
 }
 
 .header.scrolled .logo-subtitle {
     font-size: 0.8rem;
+    color: var(--brand-navy);
 }
 
 .nav-list {
