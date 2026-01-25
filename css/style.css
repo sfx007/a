@@ -267,7 +267,7 @@ body {
     max-width: none;
     object-fit: contain;
     transition: var(--transition);
-    margin-right: 15px;
+    margin-right: -25px;
 }
 
 .logo-text {
@@ -275,6 +275,7 @@ body {
     flex-direction: column;
     justify-content: center;
     line-height: 1.1;
+    align-items: center;
 }
 
 .logo-title {

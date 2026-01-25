@@ -41,7 +41,15 @@ function initLanguageSelector() {
     };
 
     // Load saved language preference and apply
-    const savedLang = localStorage.getItem('language') || 'es';
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    const savedLang = urlLang || localStorage.getItem('language') || 'es';
+
+    // Save to localStorage if it came from URL
+    if (urlLang) {
+        localStorage.setItem('language', urlLang);
+    }
+
     updateLanguageDisplay(savedLang);
     applyTranslations(savedLang);
 
@@ -99,6 +107,30 @@ function initLanguageSelector() {
             opt.classList.toggle('active', opt.dataset.lang === lang);
         });
 
+        // Update all internal links to include language param
+        updateOutgoingLinks(lang);
+    }
+
+    function updateOutgoingLinks(lang) {
+        document.querySelectorAll('a[href]').forEach(link => {
+            const href = link.getAttribute('href');
+            // Check if it's an internal link (relative path to .html or /)
+            if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:')) {
+                try {
+                    const url = new URL(href, window.location.origin + window.location.pathname);
+                    // Only update if it points to an HTML file or root
+                    if (url.pathname.endsWith('.html') || url.pathname.endsWith('/')) {
+                        // Preserve hash if exists
+                        const hash = url.hash;
+                        url.hash = ''; // Clear hash to append param
+                        url.searchParams.set('lang', lang);
+                        link.href = url.toString() + hash;
+                    }
+                } catch (e) {
+                    // Ignore invalid URLs
+                }
+            }
+        });
     }
 }
 
