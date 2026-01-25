@@ -850,6 +850,14 @@ body {
     gap: 30px;
     align-items: center;
     /* Center text vertically with icon */
+    cursor: pointer;
+    /* Indicate interactivity */
+    transition: transform 0.3s ease;
+}
+
+.solution-item:hover {
+    transform: translateX(10px);
+    /* Subtle shift for feedback */
 }
 
 .solution-icon-box {
@@ -860,6 +868,13 @@ body {
     align-items: center;
     justify-content: center;
     color: var(--brand-cyan);
+    transition: color 0.3s ease;
+    /* Smooth color transition */
+}
+
+/* Hover: Icon turns white */
+.solution-item:hover .solution-icon-box {
+    color: #ffffff;
 }
 
 /* Override flaticon default size */
@@ -882,6 +897,13 @@ body {
     color: #ffffff;
     margin-bottom: 8px;
     letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+    /* Smooth title transition */
+}
+
+/* Hover: Title turns blue */
+.solution-item:hover .solution-text h3 {
+    color: var(--brand-cyan);
 }
 
 .solution-text p {
