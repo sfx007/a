@@ -1757,10 +1757,28 @@ body {
     object-fit: contain;
 }
 
-.footer-logo span {
+.footer-logo .logo-text {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.footer-logo .logo-title {
     font-family: var(--font-display);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+}
+
+.footer-logo .logo-subtitle {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
     letter-spacing: 0.2em;
+    text-transform: uppercase;
 }
 
 .footer-desc {
