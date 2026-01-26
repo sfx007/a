@@ -418,6 +418,35 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- Site Chatbot -->
+    <div class="site-chatbot" id="site-chatbot">
+        <button class="chatbot-toggle" type="button" aria-expanded="false" aria-controls="chatbot-panel" aria-label="Open chat">
+            <span class="chatbot-toggle-icon" aria-hidden="true">
+                <i class="fas fa-comment-dots"></i>
+            </span>
+        </button>
+        <div class="chatbot-panel" id="chatbot-panel" role="dialog" aria-label="Site assistant">
+            <div class="chatbot-header">
+                <div>
+                    <div class="chatbot-title">Site assistant</div>
+                    <div class="chatbot-subtitle">Ask about services, sectors, projects, or contact.</div>
+                </div>
+                <button class="chatbot-close" type="button" aria-label="Close chat">x</button>
+            </div>
+            <div class="chatbot-messages" aria-live="polite" aria-atomic="false"></div>
+            <div class="chatbot-quick" role="list" aria-label="Suggested questions"></div>
+            <div class="chatbot-actions" role="list" aria-label="Contact shortcuts">
+                <a class="chatbot-action" data-action="call" href="tel:+34696312578">Call</a>
+                <a class="chatbot-action" data-action="email" href="mailto:info@elkhayati.com">Email</a>
+                <a class="chatbot-action" data-action="map" href="https://www.google.com/maps?q=Calle+Orion+11,+Grinon,+Madrid" target="_blank" rel="noopener">Map</a>
+            </div>
+            <form class="chatbot-form">
+                <input class="chatbot-input" type="text" name="message" placeholder="Type your question" autocomplete="off" aria-label="Message">
+                <button class="chatbot-send" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
     <script src="js/translations.js"></script>
     <script src="js/main.js"></script>
 </body>

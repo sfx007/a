@@ -240,73 +240,70 @@
     </section>
 
     <!-- Solutions Section -->
-    <section class="solutions split-layout" id="soluciones">
-        <div class="solutions-image-side">
-            <!-- Using a placeholder or existing image. User can replace this. -->
-            <img src="assets/images/worker1.jpg" alt="Construction detail" class="img-cover">
-        </div>
-        <div class="solutions-content-side">
-            <div class="solutions-list">
-                <!-- Service 1 -->
-                <div class="solution-item">
-                    <div class="solution-icon-box">
-                        <i class="flaticon-building"></i>
-                    </div>
-                    <div class="solution-text">
-                        <h3 data-translate="solutions.tabiqueria.title">Tabiquería Seca</h3>
-                        <p data-translate="solutions.tabiqueria.desc">Sistemas de placa y yeso laminado para tabiques,
-                            revestimientos y fachadas con máxima calidad.</p>
-                    </div>
+                <section class="solutions modern-ice" id="soluciones">
+        <div class="solutions-grid">
+            <!-- Service 1 -->
+            <div class="solution-item" style="--solution-bg: url('assets/images/worker1.jpg');">
+                <div class="solution-icon-box">
+                    <i class="flaticon-building"></i>
                 </div>
-
-                <!-- Service 2 -->
-                <div class="solution-item">
-                    <div class="solution-icon-box">
-                        <i class="flaticon-paper"></i>
-                    </div>
-                    <div class="solution-text">
-                        <h3 data-translate="solutions.termico.title">Aislamiento Térmico</h3>
-                        <p data-translate="solutions.termico.desc">Soluciones de aislamiento para minimizar la
-                            transmisión de calor y mejorar la eficiencia.</p>
-                    </div>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="solution-item">
-                    <div class="solution-icon-box">
-                        <i class="flaticon-city"></i>
-                    </div>
-                    <div class="solution-text">
-                        <h3 data-translate="solutions.acustico.title">Aislamiento Acústico</h3>
-                        <p data-translate="solutions.acustico.desc">Mejoramos la acústica interior evitando ruidos y
-                            vibraciones externas.</p>
-                    </div>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="solution-item">
-                    <div class="solution-icon-box">
-                        <i class="flaticon-construction"></i>
-                    </div>
-                    <div class="solution-text">
-                        <h3 data-translate="solutions.techos.title">Falsos Techos</h3>
-                        <p data-translate="solutions.techos.desc">Techos registrables, acústicos y continuos adaptados a
-                            cada espacio.</p>
-                    </div>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="solution-item">
-                    <div class="solution-icon-box">
-                        <i class="flaticon-construction-3"></i>
-                    </div>
-                    <div class="solution-text">
-                        <h3 data-translate="solutions.fuego.title">Protección Contra Fuego</h3>
-                        <p data-translate="solutions.fuego.desc">Sistemas de protección pasiva para prevenir y retardar
-                            la propagación del fuego.</p>
-                    </div>
+                <div class="solution-text">
+                    <h3 data-translate="solutions.tabiqueria.title">Tabiquería Seca</h3>
+                    <p data-translate="solutions.tabiqueria.desc">Sistemas de placa y yeso laminado para tabiques,
+                        revestimientos y fachadas con máxima calidad.</p>
                 </div>
             </div>
+
+            <!-- Service 2 -->
+            <div class="solution-item" style="--solution-bg: url('assets/images/worker2.jpg');">
+                <div class="solution-icon-box">
+                    <i class="flaticon-paper"></i>
+                </div>
+                <div class="solution-text">
+                    <h3 data-translate="solutions.termico.title">Aislamiento Térmico</h3>
+                    <p data-translate="solutions.termico.desc">Soluciones de aislamiento para minimizar la
+                        transmisión de calor y mejorar la eficiencia.</p>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="solution-item" style="--solution-bg: url('assets/images/Hotel-Element-1.jpg');">
+                <div class="solution-icon-box">
+                    <i class="flaticon-city"></i>
+                </div>
+                <div class="solution-text">
+                    <h3 data-translate="solutions.acustico.title">Aislamiento Acústico</h3>
+                    <p data-translate="solutions.acustico.desc">Mejoramos la acústica interior evitando ruidos y
+                        vibraciones externas.</p>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="solution-item" style="--solution-bg: url('assets/images/Marriott-Frankfurt-Hotel-1.jpg');">
+                <div class="solution-icon-box">
+                    <i class="flaticon-construction"></i>
+                </div>
+                <div class="solution-text">
+                    <h3 data-translate="solutions.techos.title">Falsos Techos</h3>
+                    <p data-translate="solutions.techos.desc">Techos registrables, acústicos y continuos adaptados a
+                        cada espacio.</p>
+                </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="solution-item" style="--solution-bg: url('assets/images/Hospital_Vigo.jpg');">
+                <div class="solution-icon-box">
+                    <i class="flaticon-construction-3"></i>
+                </div>
+                <div class="solution-text">
+                    <h3 data-translate="solutions.fuego.title">Protección Contra Fuego</h3>
+                    <p data-translate="solutions.fuego.desc">Sistemas de protección pasiva para prevenir y retardar
+                        la propagación del fuego.</p>
+                </div>
+            </div>
+        </div>
+        <div class="solutions-cta">
+            <a class="solution-btn" href="#contacto" data-translate="solutions.link">Más información</a>
         </div>
     </section>
 
@@ -668,8 +665,40 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- Site Chatbot -->
+    <div class="site-chatbot" id="site-chatbot">
+        <button class="chatbot-toggle" type="button" aria-expanded="false" aria-controls="chatbot-panel" aria-label="Open chat">
+            <span class="chatbot-toggle-icon" aria-hidden="true">
+                <i class="fas fa-comment-dots"></i>
+            </span>
+        </button>
+        <div class="chatbot-panel" id="chatbot-panel" role="dialog" aria-label="Site assistant">
+            <div class="chatbot-header">
+                <div>
+                    <div class="chatbot-title">Site assistant</div>
+                    <div class="chatbot-subtitle">Ask about services, sectors, projects, or contact.</div>
+                </div>
+                <button class="chatbot-close" type="button" aria-label="Close chat">x</button>
+            </div>
+            <div class="chatbot-messages" aria-live="polite" aria-atomic="false"></div>
+            <div class="chatbot-quick" role="list" aria-label="Suggested questions"></div>
+            <div class="chatbot-actions" role="list" aria-label="Contact shortcuts">
+                <a class="chatbot-action" data-action="call" href="tel:+34696312578">Call</a>
+                <a class="chatbot-action" data-action="email" href="mailto:info@elkhayati.com">Email</a>
+                <a class="chatbot-action" data-action="map" href="https://www.google.com/maps?q=Calle+Orion+11,+Grinon,+Madrid" target="_blank" rel="noopener">Map</a>
+            </div>
+            <form class="chatbot-form">
+                <input class="chatbot-input" type="text" name="message" placeholder="Type your question" autocomplete="off" aria-label="Message">
+                <button class="chatbot-send" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
     <script src="js/translations.js"></script>
     <script src="js/main.js"></script>
 </body>
 
 </html>
+
+
+

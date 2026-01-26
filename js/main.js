@@ -22,6 +22,8 @@ window.addEventListener('load', function () {
     initCounters();
     initScrollAnimations();
     initGallery();
+    initHeroParallax();
+    initSiteChatbot();
 });
 
 // ============================================
@@ -233,6 +235,7 @@ function initSlideshow() {
     }
 
     function startAutoPlay() {
+        clearInterval(slideInterval);
         slideInterval = setInterval(nextSlide, intervalTime);
     }
 
@@ -273,6 +276,346 @@ function initSlideshow() {
     if (slideshowContainer) {
         slideshowContainer.addEventListener('mouseenter', stopAutoPlay);
         slideshowContainer.addEventListener('mouseleave', startAutoPlay);
+    }
+
+}
+
+// ============================================
+// Hero Image Parallax on Scroll
+// ============================================
+function initHeroParallax() {
+    const hero = document.querySelector('.hero-slideshow');
+    if (!hero) return;
+
+    const maxShift = 300;
+    let ticking = false;
+
+    function updateParallax() {
+        const scrollY = window.scrollY || window.pageYOffset;
+        const heroTop = hero.offsetTop;
+        const heroHeight = hero.offsetHeight || 1;
+        const rawShift = -(scrollY - heroTop) * 0.35;
+        const shift = Math.max(-maxShift, Math.min(0, rawShift));
+        hero.style.setProperty('--hero-parallax', `${shift}px`);
+        ticking = false;
+    }
+
+    function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(updateParallax);
+    }
+
+    updateParallax();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+}
+
+// ============================================
+// Site Chatbot
+// ============================================
+function initSiteChatbot() {
+    const widget = document.querySelector('.site-chatbot');
+    if (!widget) return;
+
+    const toggle = widget.querySelector('.chatbot-toggle');
+    const panel = widget.querySelector('.chatbot-panel');
+    const closeBtn = widget.querySelector('.chatbot-close');
+    const form = widget.querySelector('.chatbot-form');
+    const input = widget.querySelector('.chatbot-input');
+    const messages = widget.querySelector('.chatbot-messages');
+    const quick = widget.querySelector('.chatbot-quick');
+    const actions = widget.querySelector('.chatbot-actions');
+    const title = widget.querySelector('.chatbot-title');
+    const subtitle = widget.querySelector('.chatbot-subtitle');
+    const sendBtn = widget.querySelector('.chatbot-send');
+
+    let greeted = false;
+    const storageKey = 'siteChatbotMessages';
+
+    function normalize(text) {
+        return text
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '');
+    }
+
+    const contactInfo = {
+        phone: '+34 696 312 578',
+        email: 'info@elkhayati.com',
+        address: 'Calle Orion 11, Grinon, Madrid',
+        mapUrl: 'https://www.google.com/maps?q=Calle+Orion+11,+Grinon,+Madrid'
+    };
+
+    const i18n = {
+        en: {
+            title: 'Site assistant',
+            subtitle: 'Ask about services, sectors, projects, or contact.',
+            placeholder: 'Type your question',
+            send: 'Send',
+            quick: ['Services', 'Sectors', 'Projects', 'Contact'],
+            greeting: 'Hi! I can answer about this website.',
+            help: 'Topics: services, sectors, projects, contact.',
+            fallback: 'I can only answer about this website. Try: Services, Sectors, Projects, Contact.',
+            actions: { call: 'Call', email: 'Email', map: 'Map' },
+            replies: [
+                {
+                    keys: ['services', 'service', 'solutions', 'servicios', 'soluciones', 'tabiqueria', 'drywall', 'aislamiento', 'acustico', 'termico', 'techos', 'fuego', 'proteccion'],
+                    text: 'Services: drywall systems, thermal insulation, acoustic insulation, false ceilings, and passive fire protection.'
+                },
+                {
+                    keys: ['sectors', 'sectores', 'industries', 'industry', 'hotels', 'hoteles', 'hospitals', 'hospitales', 'institutional', 'institucional', 'industrial'],
+                    text: 'Sectors: hotels, hospitals, institutional buildings, and industrial projects.'
+                },
+                {
+                    keys: ['projects', 'proyectos', 'portfolio', 'galeria', 'gallery'],
+                    text: 'Projects: see the portfolio and gallery sections for recent work.'
+                },
+                {
+                    keys: ['contact', 'contacto', 'email', 'telefono', 'phone', 'address', 'direccion'],
+                    text: 'Contact: +34 696 312 578, info@elkhayati.com, Calle Orion 11, Grinon, Madrid. Use the buttons below for quick access.'
+                },
+                {
+                    keys: ['about', 'nosotros', 'company', 'experience', 'years', 'anos', 'anios'],
+                    text: 'About: 10+ years of experience, projects in multiple countries, and a highly qualified team.'
+                }
+            ]
+        },
+        es: {
+            title: 'Asistente del sitio',
+            subtitle: 'Pregunta por servicios, sectores, proyectos o contacto.',
+            placeholder: 'Escribe tu pregunta',
+            send: 'Enviar',
+            quick: ['Servicios', 'Sectores', 'Proyectos', 'Contacto'],
+            greeting: 'Hola. Puedo responder sobre este sitio.',
+            help: 'Temas: servicios, sectores, proyectos, contacto.',
+            fallback: 'Solo puedo responder sobre este sitio. Prueba: Servicios, Sectores, Proyectos, Contacto.',
+            actions: { call: 'Llamar', email: 'Email', map: 'Mapa' },
+            replies: [
+                {
+                    keys: ['servicios', 'servicio', 'soluciones', 'tabiqueria', 'drywall', 'aislamiento', 'acustico', 'termico', 'techos', 'fuego', 'proteccion'],
+                    text: 'Servicios: tabiqueria seca, aislamiento termico, aislamiento acustico, falsos techos y proteccion pasiva contra fuego.'
+                },
+                {
+                    keys: ['sectores', 'industrias', 'hoteles', 'hospitales', 'institucional', 'industrial'],
+                    text: 'Sectores: hoteles, hospitales, institucional e industrial.'
+                },
+                {
+                    keys: ['proyectos', 'portfolio', 'galeria'],
+                    text: 'Proyectos: revisa el portfolio y la galeria para trabajos recientes.'
+                },
+                {
+                    keys: ['contacto', 'email', 'telefono', 'direccion'],
+                    text: 'Contacto: +34 696 312 578, info@elkhayati.com, Calle Orion 11, Grinon, Madrid. Usa los botones de acceso rapido.'
+                },
+                {
+                    keys: ['nosotros', 'empresa', 'experiencia', 'anos', 'anios'],
+                    text: 'Sobre nosotros: mas de 10 anos de experiencia y equipo altamente cualificado.'
+                }
+            ]
+        },
+        de: {
+            title: 'Website Assistent',
+            subtitle: 'Fragen zu Leistungen, Branchen, Projekten oder Kontakt.',
+            placeholder: 'Frage eingeben',
+            send: 'Senden',
+            quick: ['Leistungen', 'Branchen', 'Projekte', 'Kontakt'],
+            greeting: 'Hallo. Ich antworte nur uber diese Website.',
+            help: 'Themen: Leistungen, Branchen, Projekte, Kontakt.',
+            fallback: 'Ich kann nur uber diese Website antworten. Frage zu: Leistungen, Branchen, Projekte, Kontakt.',
+            actions: { call: 'Anrufen', email: 'Email', map: 'Karte' },
+            replies: [
+                {
+                    keys: ['leistungen', 'services', 'solutions', 'tabiqueria', 'drywall', 'isolation', 'akustik', 'thermisch', 'decken', 'feuer'],
+                    text: 'Leistungen: Trockenbau, thermische und akustische Isolierung, abgehange Decken, passiver Brandschutz.'
+                },
+                {
+                    keys: ['branchen', 'sektoren', 'hotels', 'hospitaler', 'institutionell', 'industrial'],
+                    text: 'Branchen: Hotels, Krankenhauser, institutionell und industriell.'
+                },
+                {
+                    keys: ['projekte', 'portfolio', 'galerie'],
+                    text: 'Projekte: siehe Portfolio und Galerie fur aktuelle Arbeiten.'
+                },
+                {
+                    keys: ['kontakt', 'email', 'telefon', 'adresse'],
+                    text: 'Kontakt: +34 696 312 578, info@elkhayati.com, Calle Orion 11, Grinon, Madrid. Nutze die Schnellzugriffe unten.'
+                },
+                {
+                    keys: ['uber uns', 'unternehmen', 'erfahrung', 'jahre'],
+                    text: 'Uber uns: mehr als 10 Jahre Erfahrung und ein qualifiziertes Team.'
+                }
+            ]
+        }
+    };
+
+    function getLang() {
+        return localStorage.getItem('language') || document.documentElement.lang || 'es';
+    }
+
+    function getStrings() {
+        const lang = getLang();
+        return i18n[lang] || i18n.en;
+    }
+
+    function addMessage(text, type, save = true) {
+        const msg = document.createElement('div');
+        msg.className = `chatbot-msg chatbot-msg--${type}`;
+        msg.textContent = text;
+        messages.appendChild(msg);
+        messages.scrollTop = messages.scrollHeight;
+        if (save) {
+            saveMessage({ type, text });
+        }
+    }
+
+    function showTyping() {
+        const typing = document.createElement('div');
+        typing.className = 'chatbot-msg chatbot-msg--bot chatbot-msg--typing';
+        typing.textContent = '...';
+        messages.appendChild(typing);
+        messages.scrollTop = messages.scrollHeight;
+        return typing;
+    }
+
+    function saveMessage(msg) {
+        try {
+            const existing = JSON.parse(localStorage.getItem(storageKey) || '[]');
+            existing.push(msg);
+            localStorage.setItem(storageKey, JSON.stringify(existing));
+        } catch (e) {
+            // ignore storage errors
+        }
+    }
+
+    function loadMessages() {
+        try {
+            return JSON.parse(localStorage.getItem(storageKey) || '[]');
+        } catch (e) {
+            return [];
+        }
+    }
+
+    function clearMessages() {
+        localStorage.removeItem(storageKey);
+        messages.innerHTML = '';
+        greeted = false;
+    }
+
+    function getReply(text) {
+        const strings = getStrings();
+        const clean = normalize(text);
+        if (clean.includes('help') || clean.includes('ayuda') || clean.includes('hilfe')) {
+            return strings.help;
+        }
+        if (clean === 'clear' || clean === 'reset') {
+            clearMessages();
+            return strings.help;
+        }
+        for (const item of strings.replies) {
+            if (item.keys.some(key => clean.includes(key))) {
+                return item.text;
+            }
+        }
+        return strings.fallback;
+    }
+
+    function renderQuickReplies() {
+        if (!quick) return;
+        const strings = getStrings();
+        quick.innerHTML = '';
+        strings.quick.forEach(label => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'chatbot-quick-btn';
+            btn.textContent = label;
+            btn.addEventListener('click', () => submitMessage(label));
+            quick.appendChild(btn);
+        });
+    }
+
+    function renderActions() {
+        if (!actions) return;
+        const strings = getStrings();
+        const actionLabels = strings.actions;
+        const actionLinks = {
+            call: `tel:${contactInfo.phone.replace(/\s+/g, '')}`,
+            email: `mailto:${contactInfo.email}`,
+            map: contactInfo.mapUrl
+        };
+
+        actions.querySelectorAll('.chatbot-action').forEach(link => {
+            const key = link.dataset.action;
+            if (!key) return;
+            link.textContent = actionLabels[key];
+            link.setAttribute('href', actionLinks[key]);
+        });
+    }
+
+    function openPanel() {
+        const strings = getStrings();
+        if (title) title.textContent = strings.title;
+        if (subtitle) subtitle.textContent = strings.subtitle;
+        if (input) input.placeholder = strings.placeholder;
+        if (sendBtn) sendBtn.textContent = strings.send;
+        renderQuickReplies();
+        renderActions();
+        panel.classList.add('is-open');
+        toggle.setAttribute('aria-expanded', 'true');
+        if (!greeted) {
+            addMessage(strings.greeting, 'bot');
+            greeted = true;
+        }
+        setTimeout(() => input.focus(), 50);
+    }
+
+    function closePanel() {
+        panel.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+    }
+
+    toggle.addEventListener('click', () => {
+        if (panel.classList.contains('is-open')) {
+            closePanel();
+        } else {
+            openPanel();
+        }
+    });
+
+    closeBtn.addEventListener('click', closePanel);
+
+    document.addEventListener('click', (e) => {
+        if (!widget.contains(e.target) && panel.classList.contains('is-open')) {
+            closePanel();
+        }
+    });
+
+    widget.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closePanel();
+    });
+
+    function submitMessage(text) {
+        const cleaned = text.trim();
+        if (!cleaned) return;
+        addMessage(cleaned, 'user');
+        const typing = showTyping();
+        const reply = getReply(cleaned);
+        setTimeout(() => {
+            typing.remove();
+            addMessage(reply, 'bot');
+        }, 250);
+        input.value = '';
+    }
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        submitMessage(input.value);
+    });
+
+    const stored = loadMessages();
+    if (stored.length) {
+        stored.forEach(item => addMessage(item.text, item.type, false));
+        greeted = true;
     }
 }
 
